@@ -1,0 +1,181 @@
+.accordion {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: var(--surface-color);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    background-color: var(--accent-hover);
+}
+
+.accordion-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.accordion-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.accordion-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.accordion-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.accordion-icon {
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+    display: flex;
+}
+
+.accordion-icon.open {
+    transform: rotate(180deg);
+}
+
+/* Content */
+.accordion-content-wrapper {
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.accordion-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Checklist Items */
+.checklist-items {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.checklist-item:hover .custom-checkbox {
+    border-color: var(--accent-color);
+}
+
+.checklist-item.checked {
+    opacity: 0.5;
+}
+
+.checklist-item.checked .item-text {
+    text-decoration: line-through;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-secondary);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    color: var(--bg-color);
+}
+
+.checklist-item.checked .custom-checkbox {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.item-text {
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+/* Diagnostic Section */
+.diagnostic-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.input-group textarea {
+    width: 100%;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    resize: vertical;
+    transition: var(--transition);
+}
+
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--text-secondary);
+}
+
+.input-group textarea::placeholder {
+    color: rgba(161, 161, 170, 0.4);
+    /* zinc-400 with opacity */
+}
+
+/* Highlighted specific requirement from Notion */
+.highlight-group textarea {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.highlight-group textarea:focus {
+    border-color: var(--accent-color);
+}

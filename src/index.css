@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Dark Mode Palette based on Lovable App Specs */
+  --bg-color: #0a0a0a; /* Fundo: Negro/Cinza muito escuro */
+  --surface-color: #18181b; /* Cards (Acordeões): Superfície cinza escuro */
+  --text-primary: #ffffff; /* Títulos em branco */
+  --text-secondary: #a1a1aa; /* subtítulos em cinza suave (zinc-400) */
+  --border-color: #27272a; /* Bordas sutis (zinc-800) */
+  --accent-color: #ffffff; /* Progresso e Destaque: Branco puro */
+  --accent-hover: rgba(255, 255, 255, 0.05); /* Efeito bg-accent/50 */
+  
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --radius: 0.5rem;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations from Specs */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+}

@@ -1,0 +1,44 @@
+.progress-container {
+    margin-bottom: 2rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.progress-value {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.progress-track {
+    height: 6px;
+    background-color: var(--surface-color);
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+    /* subtle border identical to lovable app track */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--accent-color);
+    border-radius: 9999px;
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    transform-origin: left;
+}
