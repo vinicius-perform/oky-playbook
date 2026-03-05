@@ -80,11 +80,26 @@ function App() {
       return;
     }
 
-    // Generate PDF
-    generatePDF(meetingMeta, checkedItems, textValues);
+    // Try Generate PDF and catch any errors so it doesn't crash silently
+    try {
+      generatePDF(meetingMeta, checkedItems, textValues);
 
-    if (window.confirm('Reunião finalizada e PDF gerado! Deseja iniciar uma nova reunião limpa?')) {
-      window.location.href = window.location.pathname;
+      // Wait a small bit to ensure save dialogue completes before prompting reset
+      setTimeout(() => {
+        if (window.confirm('PDF gerado com sucesso! Deseja iniciar uma nova reunião limpa agora?')) {
+          // Clear local storage for this meeting so we start fresh
+          if (meetingId) {
+            localStorage.removeItem(`okr-checked-${meetingId}`);
+            localStorage.removeItem(`okr-text-${meetingId}`);
+            localStorage.removeItem(`okr-meta-${meetingId}`);
+          }
+          // Reload without query params to go back to StartScreen
+          window.location.href = window.location.pathname;
+        }
+      }, 500);
+    } catch (error) {
+      console.error("Erro ao gerar PDF:", error);
+      alert("Ocorreu um erro ao gerar o PDF. Verifique o console.");
     }
   };
 

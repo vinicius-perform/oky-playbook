@@ -94,10 +94,7 @@ export const appData = {
         "Valor do Contrato",
         "Valor Recebido",
         "Quantidade de Follow",
-        "Valor em Follow",
-        "Quantidade Orçamento Fechado",
-        "Valor do Contrato",
-        "Valor Recebido"
+        "Valor em Follow"
       ],
       requiresDiagnostic: true,
       diagnosticPrompt: "Organização obrigatória para não perder leads quentes"

@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ChevronDown, Check } from 'lucide-react';
+import { ChevronDown, Check, Lightbulb } from 'lucide-react';
 import './Accordion.css';
 
 interface AccordionProps {
@@ -102,27 +102,20 @@ export function Accordion({
 
                     {(requiresReason || requiresDiagnostic) && (
                         <div className="diagnostic-section">
-                            {requiresReason && (
-                                <div className="input-group">
-                                    <label htmlFor={`reason-${id}`}>Motivo:</label>
-                                    <textarea
-                                        id={`reason-${id}`}
-                                        placeholder="Digite o motivo..."
-                                        value={textValues[`reason-${id}`] || ''}
-                                        onChange={(e) => onTextChange(`reason-${id}`, e.target.value)}
-                                        rows={2}
-                                    />
+                            {requiresDiagnostic && (
+                                <div className="diagnostic-alert">
+                                    <Lightbulb size={20} className="diagnostic-icon" />
+                                    <span><strong>Saída obrigatória:</strong> {diagnosticPrompt}</span>
                                 </div>
                             )}
 
-                            {requiresDiagnostic && (
-                                <div className="input-group highlight-group">
-                                    <label htmlFor={`diag-${id}`}>Saída Obrigatória:</label>
+                            {requiresReason && (
+                                <div className="input-group">
                                     <textarea
-                                        id={`diag-${id}`}
-                                        placeholder={diagnosticPrompt}
-                                        value={textValues[`diag-${id}`] || ''}
-                                        onChange={(e) => onTextChange(`diag-${id}`, e.target.value)}
+                                        id={`reason-${id}`}
+                                        placeholder="Anotações desta seção..."
+                                        value={textValues[`reason-${id}`] || ''}
+                                        onChange={(e) => onTextChange(`reason-${id}`, e.target.value)}
                                         rows={3}
                                     />
                                 </div>
