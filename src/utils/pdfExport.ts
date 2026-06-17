@@ -185,10 +185,10 @@ export const generatePDF = (
     doc.setTextColor(...black);
     doc.text("Progresso por Área", 102, chartY + 8);
 
-    // Calculate vertical spacing based on 8 sections
+    // Calculate vertical spacing based on the number of sections
     // Keep them well padded so they don't look squished.
-    const startLineY = chartY + 16;
-    const ySpacing = 8.5;
+    const startLineY = chartY + 15.5;
+    const ySpacing = 7.1;
     let lineY = startLineY;
 
     appData.sections.forEach((section) => {

@@ -3,6 +3,26 @@ export const appData = {
   subtitle: "Checkpoint de OKRs",
   sections: [
     {
+      id: "3",
+      title: "CONGRUÊNCIA DO FUNIL COMPLETO",
+      items: [
+        "Distribuição do CRM",
+        "Link Bio CRM",
+        "Instagram CRM",
+        "Link Bio > Número das Campanhas > Conexão CRM"
+      ],
+      requiresDiagnostic: true,
+      diagnosticPrompt: "Ajuste necessário no funil (sim ou não + onde)",
+      requiresReason: true
+    },
+    {
+      id: "9",
+      title: "VERIFICAÇÃO DA AGENDA DO MÉDICO",
+      items: [
+        "Consultas e procedimentos semanais"
+      ]
+    },
+    {
       id: "1",
       title: "ENCAMINHAMENTOS DA REUNIÃO ANTERIOR",
       items: [
@@ -11,7 +31,7 @@ export const appData = {
     },
     {
       id: "2",
-      title: "VISÃO DO ANALISTA DE DADOS",
+      title: "LEITURA DO CENÁRIO ATUAL DO PROJETO",
       items: [
         "Investimento",
         "Quantidade de leads",
@@ -23,19 +43,6 @@ export const appData = {
       ],
       requiresDiagnostic: true,
       diagnosticPrompt: "Diagnóstico claro em 1 frase. Ex: 'O gargalo está na conversão comercial (12%), apesar do CPL saudável.'",
-      requiresReason: true
-    },
-    {
-      id: "3",
-      title: "CONGRUÊNCIA DO FUNIL COMPLETO",
-      items: [
-        "Distribuição da Kommo",
-        "Link Bio Kommo",
-        "Instagram Kommo",
-        "Link Bio > Número das Campanhas > Conexão Kommo"
-      ],
-      requiresDiagnostic: true,
-      diagnosticPrompt: "Ajuste necessário no funil (sim ou não + onde)",
       requiresReason: true
     },
     {
@@ -78,7 +85,7 @@ export const appData = {
         "Público Congruente?",
         "Criativos Ativos",
         "Teste de Criativos Rodando?",
-        "Número de Whatsapp Correto com a Kommo"
+        "Número de Whatsapp Correto com o CRM"
       ],
       requiresDiagnostic: true,
       diagnosticPrompt: "Estamos escalando o que funciona ou insistindo no que não funciona?",
